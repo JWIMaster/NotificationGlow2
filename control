@@ -1,0 +1,9 @@
+Package: jwi
+Name: NotificationGlow2
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: J_W_I_
+Author: J_W_I_
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
