@@ -36,7 +36,7 @@ static void preferencesChanged() {
 	}
 	//Create a rectangle that matches the shape of the notification
 	self.notificationView = [[UIView alloc] init];
-	self.notificationView.backgroundColor = [UIColor clearColor];
+	self.notificationView.backgroundColor = [[UIColor clearColor] colorWithAlphaComponent:0.7];
 	self.notificationView.layer.cornerRadius = 20;
 
 	//Make and outer edge glow for the final effect
