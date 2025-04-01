@@ -5,6 +5,7 @@
 @property (nonatomic, strong) UIView *notificationView;
 @end
 
+
 //Main Hook
 %hook NCNotificationViewController
 %property (nonatomic, strong) UIView *notificationView;
@@ -32,3 +33,4 @@
 }
 
 %end
+
