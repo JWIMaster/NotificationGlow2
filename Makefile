@@ -10,3 +10,5 @@ NotificationGlow2_FILES = Tweak.x
 NotificationGlow2_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
+SUBPROJECTS += NotificationGlow2Prefs
+include $(THEOS_MAKE_PATH)/aggregate.mk

@@ -5,6 +5,18 @@
 @property (nonatomic, strong) UIView *notificationView;
 @end
 
+static BOOL enableGlow;
+
+//Create a preference file that contains a BOOL value from the on/off switch
+static void preferencesChanged() {
+	NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName:@"com.jwi.NotificationGlow2Prefs"];
+	enableGlow = [prefs objectForKey:@"enableGlow"] ? [prefs boolForKey:@"enableGlow"] : YES;
+}
+
+//Constantly check if any preference has changed
+%ctor {
+	preferencesChanged();
+}
 
 //Main Hook
 %hook NCNotificationViewController
@@ -19,6 +31,9 @@
 //Inject glow behind each notification
 -(void)viewDidLoad {
 	%orig;
+	if (!enableGlow) {
+		return;
+	}
 	//Create a rectangle that matches the shape of the notification
 	self.notificationView = [[UIView alloc] init];
 	self.notificationView.backgroundColor = [UIColor clearColor];
