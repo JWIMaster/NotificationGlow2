@@ -5,6 +5,7 @@
 @property (nonatomic, strong) UIView *notificationView;
 @end
 
+
 static BOOL enableGlow;
 
 //Create a preference file that contains a BOOL value from the on/off switch
@@ -16,7 +17,10 @@ static void preferencesChanged() {
 //Constantly check if any preference has changed
 %ctor {
 	preferencesChanged();
+	//CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)preferencesChanged, CFSTR("com.jwi.NotificationGlow2Prefs-Updated"), NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
+
 }
+
 
 //Main Hook
 %hook NCNotificationViewController
