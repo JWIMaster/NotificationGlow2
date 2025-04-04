@@ -31,7 +31,27 @@
    		 	<key>action</key>
     	 	<string>respring</string>
     	 	<key>defaults</key>
-    	 	<string>com.dingus.TutorialPrefs</string>
+    	 	<string>com.jwi.NotificationGlow2Prefs</string>
+		</dict>
+		<dict>
+   	 		<key>cell</key>
+    		<string>PSLinkCell</string>
+    		<key>cellClass</key>
+    		<string>GcColorPickerCell</string>
+    		<key>label</key>
+    		<string>Your Color Label</string>
+    		<key>defaults</key>
+    		<string>com.jwi.NotificationGlow2Prefs</string>
+    		<key>key</key>
+    		<string>YourColor</string>
+    		<key>supportsAlpha</key>
+    		<true/>
+    		<key>safeOnDismiss</key>
+    		<true/>
+    		<key>fallback</key>
+    		<string>ffffffff</string>
+    		<key>style</key>
+    		<integer>1</integer>
 		</dict>
 	</array>
 	<key>title</key>

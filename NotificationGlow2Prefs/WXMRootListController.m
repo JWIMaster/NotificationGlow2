@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "WXMRootListController.h"
+#import <spawn.h>
+#import <rootless.h>
 
 @implementation WXMRootListController
 
