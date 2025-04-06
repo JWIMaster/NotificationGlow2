@@ -1,11 +1,10 @@
-TARGET := iphone:clang:latest:14.0
+TARGET := iphone:clang:latest:16.5:14.0
 INSTALL_TARGET_PROCESSES = SpringBoard
 THEOS_PACKAGE_SCHEME=rootless
 
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = NotificationGlow2
-TWEAKNAME_LIBRARIES = lgcuniversal
 
 NotificationGlow2_FILES = Tweak.x
 NotificationGlow2_CFLAGS = -fobjc-arc 
