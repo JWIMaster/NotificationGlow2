@@ -9,7 +9,8 @@ TWEAKNAME_LIBRARIES = lgcuniversal
 
 NotificationGlow2_FILES = Tweak.x
 NotificationGlow2_CFLAGS = -fobjc-arc 
-NotificationGlow2_LDFLAGS = -lgcuniversal
+
+NotificationGlow2_LIBRARIES = gcuniversal
 
 
 
