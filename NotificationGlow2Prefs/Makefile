@@ -10,5 +10,6 @@ NotificationGlow2Prefs_FRAMEWORKS = UIKit
 NotificationGlow2Prefs_PRIVATE_FRAMEWORKS = Preferences
 NotificationGlow2Prefs_INSTALL_PATH = /Library/PreferenceBundles
 NotificationGlow2Prefs_CFLAGS = -fobjc-arc
+NotificationGlow2Prefs_LIBRARIES = gcuniversal
 
 include $(THEOS_MAKE_PATH)/bundle.mk
