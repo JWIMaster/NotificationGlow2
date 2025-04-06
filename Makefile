@@ -11,9 +11,6 @@ NotificationGlow2_CFLAGS = -fobjc-arc
 
 NotificationGlow2_LIBRARIES = gcuniversal
 
-
-
-
 include $(THEOS_MAKE_PATH)/tweak.mk
 SUBPROJECTS += NotificationGlow2Prefs
 include $(THEOS_MAKE_PATH)/aggregate.mk
