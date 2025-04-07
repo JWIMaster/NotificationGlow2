@@ -8,7 +8,8 @@
 
 
 static BOOL enableGlow;
-
+static NSInteger glowRadius;
+static double glowOpacity;
 
 
 
@@ -16,12 +17,15 @@ static BOOL enableGlow;
 static void preferencesChanged() {
 	NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName:@"com.jwi.NotificationGlow2Prefs"];
 	enableGlow = [prefs objectForKey:@"enableGlow"] ? [prefs boolForKey:@"enableGlow"] : YES;
+	glowRadius = [prefs objectForKey:@"glowRadius"] ? [prefs floatForKey:@"glowRadius"] : 10; 
+	glowOpacity = [prefs objectForKey:@"glowOpacity"] ? [prefs floatForKey:@"glowOpacity"] : 0.7; 
+
 }
 
 //Constantly check if any preference has changed
 %ctor {
 	preferencesChanged();
-	//CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)preferencesChanged, CFSTR("com.jwi.NotificationGlow2Prefs-Updated"), NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
+	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)preferencesChanged, CFSTR("com.jwi.NotificationGlow2Prefs-Updated"), NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
 }
 
 
@@ -51,8 +55,8 @@ static void preferencesChanged() {
 	
 	UIColor *colorWithFallback = [GcColorPickerUtils colorFromDefaults:@"com.jwi.NotificationGlow2Prefs" withKey:@"YourColor" fallback:@"ffffffff"];
 	self.notificationView.layer.shadowColor = colorWithFallback.CGColor;
-	self.notificationView.layer.shadowOpacity = 0.7;
-	self.notificationView.layer.shadowRadius = 10;
+	self.notificationView.layer.shadowOpacity = glowOpacity;
+	self.notificationView.layer.shadowRadius = glowRadius;
 	self.notificationView.layer.shadowOffset = CGSizeZero;
 	[self.view insertSubview:self.notificationView atIndex:0];
 }
