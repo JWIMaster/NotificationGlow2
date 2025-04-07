@@ -6,7 +6,6 @@
 @property (nonatomic, strong) UIView *notificationView;
 @end
 
-
 static BOOL enableGlow;
 static NSInteger glowRadius;
 static double glowOpacity;
@@ -27,6 +26,8 @@ static void preferencesChanged() {
 	preferencesChanged();
 	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)preferencesChanged, CFSTR("com.jwi.NotificationGlow2Prefs-Updated"), NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
 }
+
+
 
 
 //Main Hook
