@@ -6,6 +6,7 @@
 @property (nonatomic, strong) UIView *notificationView;
 @end
 
+
 static BOOL enableGlow;
 static NSInteger glowRadius;
 static double glowOpacity;
